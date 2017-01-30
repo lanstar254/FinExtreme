@@ -55,47 +55,54 @@ public class MemberProcess extends JDialog {
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
-		contentPanel.setLayout(new BorderLayout(0, 0));
 		setModal(true);
 		setLocationRelativeTo(null);
+		contentPanel.setLayout(new BorderLayout(0, 0));
 		{
 			JScrollPane scrollPane = new JScrollPane();
-			contentPanel.add(scrollPane, BorderLayout.SOUTH);
+			contentPanel.add(scrollPane);
 			{
-				JDesktopPane desktopPane = new JDesktopPane();
+				JPanel desktopPane = new JPanel();
 				scrollPane.setViewportView(desktopPane);
-				desktopPane.setLayout(new BorderLayout(0, 0));
+				desktopPane.setLayout(new MigLayout("", "[947px]", "[717px]"));
 				{
 					JPanel panel = new JPanel();
-					desktopPane.add(panel, BorderLayout.NORTH);
-					panel.setLayout(new MigLayout("", "[152][152][152][152][152][:152:152px]", "[44.00,fill][204.00][452.00]"));
+					desktopPane.add(panel, "cell 0 0,grow");
+					panel.setLayout(null);
 					{
 						JButton btnNewButton = new JButton("Statement (F11)");
-						panel.add(btnNewButton, "cell 0 0,growx");
+						btnNewButton.setBounds(7, 7, 152, 44);
+						panel.add(btnNewButton);
 					}
 					{
 						JButton btnProcessMember = new JButton("Process Member");
-						panel.add(btnProcessMember, "cell 1 0,growx");
+						btnProcessMember.setBounds(163, 7, 152, 44);
+						panel.add(btnProcessMember);
 					}
 					{
 						JButton btnSaveEntry = new JButton("Save Entry");
-						panel.add(btnSaveEntry, "cell 2 0,growx");
+						btnSaveEntry.setBounds(319, 7, 152, 44);
+						panel.add(btnSaveEntry);
 					}
 					{
 						JButton btnPrint = new JButton("Print");
-						panel.add(btnPrint, "cell 3 0,growx");
+						btnPrint.setBounds(475, 7, 152, 44);
+						panel.add(btnPrint);
 					}
 					{
 						JButton btnCancelEntry = new JButton("Cancel Entry");
-						panel.add(btnCancelEntry, "cell 4 0,growx");
+						btnCancelEntry.setBounds(631, 7, 152, 44);
+						panel.add(btnCancelEntry);
 					}
 					{
 						JButton btnClose = new JButton("Close");
-						panel.add(btnClose, "cell 5 0,growx");
+						btnClose.setBounds(787, 7, 152, 44);
+						panel.add(btnClose);
 					}
 					{
 						JPanel panel_1 = new JPanel();
-						panel.add(panel_1, "cell 0 1 6 1,grow");
+						panel_1.setBounds(7, 55, 932, 204);
+						panel.add(panel_1);
 						panel_1.setLayout(new BorderLayout(0, 0));
 						{
 							JPanel panel_2 = new JPanel();
@@ -197,30 +204,6 @@ public class MemberProcess extends JDialog {
 								textField_7 = new JTextField();
 								panel_2.add(textField_7, "cell 5 5,growx");
 								textField_7.setColumns(10);
-							}
-						}
-					}
-					{
-						JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-						panel.add(tabbedPane, "cell 0 2 6 1,grow");
-						{
-							JPanel panel_1 = new JPanel();
-							tabbedPane.addTab("Balance Status", null, panel_1, null);
-							panel_1.setLayout(new MigLayout("", "[grow]", "[137.00][129.00][139.00]"));
-							{
-								JPanel panel_2 = new JPanel();
-								panel_2.setBorder(new TitledBorder(null, "Member Balance Status", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-								panel_1.add(panel_2, "cell 0 0,grow");
-								panel_2.setLayout(new MigLayout("", "[]", "[]"));
-							}
-							{
-								JPanel panel_2 = new JPanel();
-								panel_2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Loan In Service", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-								panel_1.add(panel_2, "cell 0 1,grow");
-							}
-							{
-								JPanel panel_2 = new JPanel();
-								panel_1.add(panel_2, "cell 0 2,grow");
 							}
 						}
 					}
