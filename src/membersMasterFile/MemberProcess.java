@@ -51,7 +51,7 @@ public class MemberProcess extends JDialog {
 	 * Create the dialog.
 	 */
 	public MemberProcess() {
-		setBounds(100, 100, 987, 813);
+		setBounds(100, 100, 1011, 780);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -96,6 +96,11 @@ public class MemberProcess extends JDialog {
 					}
 					{
 						JButton btnClose = new JButton("Close");
+						btnClose.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								dispose();
+							}
+						});
 						btnClose.setBounds(787, 7, 152, 44);
 						panel.add(btnClose);
 					}
