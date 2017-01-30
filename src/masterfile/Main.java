@@ -39,6 +39,7 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
+		setTitle("TODAYS LESSON");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth()-10;
 		double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight()-45;
